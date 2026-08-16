@@ -1,0 +1,37 @@
+services:
+  - type: web
+    name: matt-technologies-store
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_VERSION
+        value: 20
+      - key: SESSION_SECRET
+        generateValue: true
+      - key: DATABASE_URL
+        sync: false
+      - key: ADMIN_EMAIL
+        sync: false
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: BUSINESS_WHATSAPP
+        sync: false
+      - key: PAYFAST_MERCHANT_ID
+        sync: false
+      - key: PAYFAST_MERCHANT_KEY
+        sync: false
+      - key: PAYFAST_PASSPHRASE
+        sync: false
+      - key: PAYFAST_RETURN_URL
+        sync: false
+      - key: PAYFAST_CANCEL_URL
+        sync: false
+      - key: PAYFAST_NOTIFY_URL
+        sync: false
+      - key: PAYFAST_SANDBOX
+        value: "true"
+databases:
+  - name: matt-technologies-db
+    plan: free
